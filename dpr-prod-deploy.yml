@@ -1,5 +1,5 @@
 ---
-- hosts: dpr-dev.epss.ucla.edu
+- hosts: "{{ host_override | default('diyrot.epss.ucla.edu') }}"
 
   roles:
     - dpr-production-deploy
