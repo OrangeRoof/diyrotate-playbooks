@@ -255,7 +255,7 @@
 
 - name: Certbot it up.
   become: yes
-  command: certbot --nginx -d diyrot.epss.ucla.edu --non-interactive --redirect --agree-tos -m webmaster@epss.ucla.edu
+  command: certbot --nginx -d {{ site_fqdn }} --non-interactive --redirect --agree-tos -m webmaster@epss.ucla.edu
 
 - name: service check
   service:
