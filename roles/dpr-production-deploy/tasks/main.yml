@@ -121,14 +121,13 @@
   with_fileglob:
     - "/var/www/{{ site_fqdn }}/*"
 
-- name: create 'count' file for counter. 
-  become: true
+- name: set permissions for count
+  become: yes
   file:
-    path: /var/www/{{site_fqdn}}/count
-    state: touch
-    owner: "{{ webapp_user }}"
-    group: "{{ webapp_user }}"
-    mode: 0760
+    path: "/srv/{{ project_name }}/proc/count"
+    owner: "www-data"
+    group: "www-data"
+    mode: 0750
 
 - name: Nginx.conf to  /etc/nginx/sites-available
   become: yes
