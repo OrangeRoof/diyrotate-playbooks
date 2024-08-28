@@ -37,6 +37,11 @@ server {
                 uwsgi_pass flask;
         }
 
+        location /advderot/ {
+                include uwsgi_params;
+                uwsgi_pass flask;
+        }
+
         location /count/ {
                 include uwsgi_params;
                 uwsgi_pass flask;
