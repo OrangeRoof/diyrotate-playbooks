@@ -4,6 +4,5 @@
 
 For deployment on the dev site, run:
 ```
-ansible-playbook dpr-prod-deploy.yml -f 10 -e host_override=localhost
-site_fqdn=dpr-dev.epss.ucla.edu
+rm -fdr /srv/diyrot && ansible-playbook dpr-prod-deploy.yml -f 10 -e host_override=localhost -e site_fqdn=dpr-dev.epss.ucla.edu
 ```
