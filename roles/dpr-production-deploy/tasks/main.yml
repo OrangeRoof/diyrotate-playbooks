@@ -234,7 +234,7 @@
   become: true
   service:
     name: emperor.uwsgi
-    state: reloaded
+    state: restarted
 
 - name: ufw allow http
   become: yes
